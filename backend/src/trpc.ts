@@ -32,7 +32,7 @@ const trpc = initTRPC.create()
 
 export const trpcRouter = trpc.router({
   getNotes: trpc.procedure.query(() => {
-    return notes
+    return { notes }
   }),
 })
 
