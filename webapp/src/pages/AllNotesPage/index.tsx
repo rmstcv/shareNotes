@@ -10,7 +10,7 @@ export const AllNotesPage = () => {
   if (isError) {
     return <span>Error: {error.message}</span>
   }
-  
+
   return (
     <div>
       <h1>All Notes</h1>
