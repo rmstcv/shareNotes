@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+import { getViewNoteRoute } from '../../lib/routes.ts'
 import { trpc } from '../../lib/trpc'
 
 export const AllNotesPage = () => {
@@ -16,7 +18,9 @@ export const AllNotesPage = () => {
       <h1>All Notes</h1>
       {data.notes.map((note) => (
         <div key={note.nick}>
-          <h2>{note.name}</h2>
+          <h2>
+            <Link to={getViewNoteRoute({ noteNick: note.nick })}>{note.name}</Link>
+          </h2>
           <p>{note.description}</p>
         </div>
       ))}
