@@ -1,7 +1,8 @@
 import { useParams } from 'react-router-dom'
+import { type ViewNoteRouteParams } from '../../lib/routes'
 
 export const ViewNotePage = () => {
-  const { noteNick } = useParams() as { noteNick: string }
+  const { noteNick } = useParams() as ViewNoteRouteParams
   return (
     <div>
       <h1>{noteNick}</h1>
