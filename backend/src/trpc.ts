@@ -1,6 +1,6 @@
 import { initTRPC } from '@trpc/server'
-
 import _ from 'lodash'
+import { z } from 'zod'
 
 const notes = _.times(100, (i) => ({
   nick: `cool-idea-nick-${i}`,
@@ -15,6 +15,16 @@ export const trpcRouter = trpc.router({
   getNotes: trpc.procedure.query(() => {
     return { notes: notes.map((note) => _.pick(note, ['nick', 'name', 'description'])) }
   }),
+  getNote: trpc.procedure
+    .input(
+      z.object({
+        noteNick: z.string(),
+      })
+    )
+    .query(({ input }) => {
+      const note = notes.find((note) => note.nick === input.noteNick)
+      return { note: note || null }
+    }),
 })
 
 export type TrpcRouter = typeof trpcRouter
