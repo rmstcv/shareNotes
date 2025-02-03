@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { type ViewNoteRouteParams } from '../../lib/routes'
 import { trpc } from '../../lib/trpc'
+import css from './index.module.scss'
 
 export const ViewNotePage = () => {
   const { noteNick } = useParams() as ViewNoteRouteParams
@@ -23,9 +24,9 @@ export const ViewNotePage = () => {
 
   return (
     <div>
-      <h1>{data.note.name}</h1>
-      <p>{data.note.description}</p>
-      <div dangerouslySetInnerHTML={{ __html: data.note.text }} />
+      <h1 className={css.title}>{data.note.name}</h1>
+      <p className={css.description}>{data.note.description}</p>
+      <div className={css.text} dangerouslySetInnerHTML={{ __html: data.note.text }} />
     </div>
   )
 }

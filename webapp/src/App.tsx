@@ -4,6 +4,7 @@ import { getAllNotesRoute, getViewNoteRoute, viewNoteRouteParams } from './lib/r
 import { TrpcProvider } from './lib/trpc'
 import { AllNotesPage } from './pages/AllNotesPage'
 import { ViewNotePage } from './pages/ViewNotePage'
+import './styles/global.scss'
 
 export const App = () => {
   return (

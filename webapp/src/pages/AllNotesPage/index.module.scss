@@ -1,0 +1,30 @@
+@import '../../styles/_vars.scss';
+@import '../../styles/_mixins.scss';
+
+.title {
+  @include h1;
+}
+
+.notes {
+  .note {
+    padding: 20px;
+    border: 1px solid $black;
+    border-radius: 10px;
+
+    &+.idea {
+      margin-top: 20px;
+    }
+
+    .noteName {
+      @include h2;
+
+      .noteLink {
+        @include link;
+      }
+    }
+
+    .noteDescription {
+      font-size: 18px;
+    }
+  }
+}
