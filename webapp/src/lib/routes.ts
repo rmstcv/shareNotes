@@ -8,6 +8,4 @@ export const viewNoteRouteParams = getRouteParams({ noteNick: true })
 export type ViewNoteRouteParams = typeof viewNoteRouteParams
 export const getViewNoteRoute = ({ noteNick }: ViewNoteRouteParams) => `/notes/${noteNick}`
 
-// export const viewNoteRouteParams = { noteNick: ':noteNick' }
-// export type ViewNoteRouteParams = { noteNick: string }
-// export const getViewNoteRoute = ({ noteNick }: { noteNick: string }) => `/notes/${noteNick}`
+export const getNewNoteRoute = () => '/ideas/new'

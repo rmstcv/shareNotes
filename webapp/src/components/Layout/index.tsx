@@ -1,5 +1,5 @@
 import { Link, Outlet } from 'react-router-dom'
-import { getAllNotesRoute } from '../../lib/routes'
+import { getAllNotesRoute, getNewNoteRoute} from '../../lib/routes'
 import css from './index.module.scss'
 
 export const Layout = () => {
@@ -11,6 +11,11 @@ export const Layout = () => {
           <li className={css.item}>
             <Link className={css.link} to={getAllNotesRoute()}>
               All Notes
+            </Link>
+          </li>
+          <li className={css.item}>
+            <Link className={css.link} to={getNewNoteRoute()}>
+              Add Note
             </Link>
           </li>
         </ul>
